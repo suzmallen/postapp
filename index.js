@@ -11,7 +11,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function(request, response) {
-  response.render('pages/index');
+     var params = {price:"", weight: 0, type: "sl" };
+  response.render('pages/index', params);
 });
 
 app.get('/calc', function(request, response) {
@@ -78,7 +79,7 @@ function calculateRate(response,type,weight){
             if(round_weight >=4){
                 price = 1.09;
             }else{
-                price = .46 + ((round_weight - 1) * 21);
+                price = .46 + ((round_weight - 1) * .21);
             }
             break;
     }

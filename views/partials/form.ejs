@@ -1,0 +1,14 @@
+<form method="get" action="/calc">
+       <h4>Please enter information about your mailing:</h4>
+      <label>Enter Weight</label>
+      <input id="weight" name="weight" type="text" value="<%= weight %>"/><br><br>
+      <label>Select Type</label>
+      <select id="type" name="type">
+        <option value="sl" <% if(type=="sl"){%> SELECTED <%}%>>Letter (Stamped)</option>
+        <option value="ml" <% if(type=="ml"){%> SELECTED <%}%>>Letter (Metered)</option>
+        <option value="le" <% if(type=="le"){%> SELECTED <%}%>>Large Envelope</option>
+        <option value="pl" <% if(type=="pl"){%> SELECTED <%}%>>Parcel</option>
+        <option value="pc" <% if(type=="pc"){%> SELECTED <%}%>>Post Card</option>
+      </select><br/><br>
+      <input type="submit" value="Calculate"/>
+    </form>
